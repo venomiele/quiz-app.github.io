@@ -16,28 +16,45 @@
           </video>
     </div>
     </div>
-
+<!-- End of quiz score box + Correct answers -->
+<div class="score-box">
+    <h3 class="score"></h3>
+    <button class="reload" onclick="location.reload()">Take quiz again !</button>
+    <button class="corrections">See correct answers !</button>
+                        <!-- Answers population will go here -->
+    <div class="dropdown">
+        <div class="rows">
+        <div class="dropdown-answers">
+            <h2 class="question-answers"></h2>
+</div>
+<p id="answers"></p>
+        </div>
+    </div>
+    </div>
     <!-- Questions container-->
+
     <article class="hero-container">
         <div class="question-container">
 <h2 class="question">Here will go the question!</h2>
 <hr>
 </div>
 <div class="ul-container">
+    <form>
 <ul class="answer-list">
-    <li>
-        <input class="select" id="answer" type="radio"  name="answer" value="true">
-    <label id="a" for="answer"></label>
+    <li class="questions-li">
+        <input class="select" id="a" type="radio"  name="answer1" value="true" checked>
+    <label id="answer1" for="a"></label>
 </li>
-<li>
-    <input class="select" id="answer1" type="radio" name="answer1" value="true">
-<label id="b" for="answer1"></label>
+<li class="questions-li">
+    <input class="select" id="b" type="radio" name="answer1" value="true">
+<label id="answer2" for="b"></label>
 </li>
-<li>
-    <input class="select" type="radio"  id="answer2" name="answer2" value="true">
-<label id="c" for="answer2"></label>
+<li class="questions-li">
+    <input class="select" type="radio"  id="c" name="answer1" value="true">
+<label id="answer3" for="c"></label>
 </li>
 </ul>
+</form>
 <h2 class="error">You need to select an answer!</h2>
 </div>
 <button class="btn">Submit Answer</button>

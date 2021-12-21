@@ -96,4 +96,34 @@ box-shadow: inset 5px 5px 10px rgb(11, 228, 210);
 
 li {
     padding-left: 5rem;
+    font-size: 1.25rem;
+    transition: all 0.3s linear;
+}
+
+li:hover {
+    transform:scale(1.10);
+    color: lightgrey;
+}
+
+.score-box {
+    text-align: center;
+    width: 50%;
+    height: 40%;
+    display: none;
+    color: white;
+    font-size: 1.75rem;
+}
+
+.reload {
+    width: 100%;
+    border: none;
+    color: white;
+    font-weight: 900;
+    background-color: blue;
+    transition: all 0.3s linear;
+    cursor: pointer;
+    box-shadow: inset 5px 5px 10px;
+    font-size: 1.75rem;
+    margin-top: 1rem;
+    border-radius: 5px;
 }
