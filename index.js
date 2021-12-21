@@ -1,5 +1,5 @@
 const quizData = [
-    { question: "How old is Andrei?",
+    { question: "How old is Andrei ?",
     a: "Andrei is 18 years old.",
     b: "Andrei is 20 years old.",
     c: "Andrei is 22 years old.",
@@ -11,19 +11,19 @@ const quizData = [
     c: "C++",
     correct: "a"
     },
-    { question: "Will Andrei get a job as a developer in the next year?",
+    { question: "Will Andrei get a job as a developer in the next year ?",
     a: "Yes",
     b: "Of course",
     c: "Sure",
     correct: "a"
     },
-    { question: "Will You have a great day today?",
-    a: "Yes",
-    b: "Of course",
-    c: "Sure",
+    { question: "Will You have a great day today ?",
+    a: "Absolutely",
+    b: "Indeed",
+    c: "Yep",
     correct: "c"
      },
-    { question: "What is Andrei's favorite animal?",
+    { question: "What is Andrei's favorite animal ?",
 a: "Dog",
 b: "Cat",
 c: "Wolf",
@@ -41,14 +41,19 @@ let chosen = document.querySelectorAll(".select");
 let error = document.querySelector(".error");
 let scoreBox = document.querySelector(".score-box");
 let scoreText = document.querySelector(".score");
+let section = document.querySelector(".rows");
+let colored = document.getElementById("answers")
+let errorMsg = document.querySelector(".error");
 
 let score = 0;
-let decision = undefined;
 let currentQuestion = 0;
+let decision = undefined;
 btn.disabled = true;
 let checkArray = [];
+let radioValue = undefined;
 loadQuiz();
 blockBtn();
+populate(quizData);
 
 
 function deselectAnswers() {
@@ -56,6 +61,8 @@ function deselectAnswers() {
         inputs.checked = false;
     })
 }
+
+
 function blockBtn() {
     chosen.forEach(function(inputs){
         inputs.addEventListener("click", () => {
@@ -91,15 +98,45 @@ function scoreNumber () {
     return decision;
     }
 
+  // Populating the right answers 
 
+
+    function populate(Items) {
+        let populateItems = Items.map(function(item) {
+            return `<div class="rows">
+            <div class="dropdown-answers">
+                <h2 class="question-answers">${item.question}</h2>
+    </div>
+          <p id="answers">The correct answer was ${item.correct}.</p>
+        </div>`
+        })
+        populateItems = populateItems.join("");
+        section.innerHTML = populateItems;
+    }
+
+    function errorFunct() {
+        errorMsg.style.display = "block";
+        errorMsg.innerHTML = `The correct answer was ${quizData[currentQuestion - 1].correct} !`;   
+    }
+    
+    function clearError() {
+        errorMsg.style.display = "none";
+    }
 
 btn.addEventListener("click", () => {
        
         let clientDecision = scoreNumber();    
         if(clientDecision === quizData[currentQuestion].correct) {
             score++;
-        }       
-        currentQuestion++;
+            errorMsg.style.display = "block";
+            errorMsg.innerHTML = `Your answer was correct !`
+            setTimeout(clearError,1200);
+        } else {
+            setTimeout(errorFunct,0);
+            setTimeout(clearError,1200);
+        }
+    
+         currentQuestion++;
          blockBtn();
      
 
