@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Bebas Neue', cursive;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow-y: hidden;
+}
+
+ul {
+  list-style-type: none;
+}
+
+/* Video */
+.video-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.video {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  top: 0;
+  left: 0;
+}
+
+.hero-container {
+  color: white;
+  width: 50%;
+  height: 40%;
+  border-radius: 5px;
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  -webkit-box-shadow: inset 5px 5px 20px white, 5px 5px 10px black;
+          box-shadow: inset 5px 5px 20px white, 5px 5px 10px black;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 20% 60% 20%;
+      grid-template-rows: 20% 60% 20%;
+  -webkit-animation: moving 1.3s ease-in;
+          animation: moving 1.3s ease-in;
+}
+
+/* Questions animation */
+@-webkit-keyframes moving {
+  from {
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+@keyframes moving {
+  from {
+    -webkit-transform: translateY(500px);
+            transform: translateY(500px);
+  }
+  to {
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+.ul-container {
+  padding-top: 2rem;
+}
+
+label {
+  padding: 0.25rem;
+  cursor: pointer;
+}
+
+input {
+  cursor: pointer;
+}
+
+.btn {
+  width: 100%;
+  border: none;
+  color: white;
+  font-weight: 900;
+  background-color: blue;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  -webkit-box-shadow: inset 3px 3px 10px;
+          box-shadow: inset 3px 3px 10px;
+  font-size: 1.75rem;
+}
+
+hr {
+  border-radius: 2px;
+}
+
+.error {
+  padding: 2rem;
+  text-align: center;
+  display: none;
+}
+
+.btn:hover {
+  background-color: blueviolet;
+  -webkit-box-shadow: inset 5px 5px 10px #0be4d2;
+          box-shadow: inset 5px 5px 10px #0be4d2;
+}
+
+.question-container {
+  text-align: center;
+  padding: 1rem;
+}
+
+.questions-li {
+  padding-left: 5rem;
+  padding-top: 0.5rem;
+  font-size: 1.25rem;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+
+.questions-li:hover {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+  color: lightgrey;
+}
+
+.score-box {
+  text-align: center;
+  width: 70%;
+  height: 90%;
+  display: none;
+  color: white;
+  font-size: 1.75rem;
+}
+
+.reload {
+  width: 100%;
+  border: none;
+  color: white;
+  font-weight: 900;
+  background-color: blue;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+  -webkit-box-shadow: inset 5px 5px 10px;
+          box-shadow: inset 5px 5px 10px;
+  font-size: 1.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 5px;
+}
+
+.corrections {
+  width: 100%;
+  border: none;
+  color: white;
+  font-weight: 900;
+  background-color: red;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  -webkit-box-shadow: inset 5px 5px 10px;
+          box-shadow: inset 5px 5px 10px;
+  font-size: 1.75rem;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-radius: 5px;
+}
+
+.reload:hover {
+  -webkit-box-shadow: inset 3px 3px 8px black;
+          box-shadow: inset 3px 3px 8px black;
+}
+
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+}
+
+/* Dropdown answers */
+#dropdown {
+  height: 60%;
+  font-size: 1rem !important;
+  padding: 1rem;
+  overflow-y: scroll;
+  border: 2px solid white;
+}
+
+.dropdown-row {
+  height: auto;
+  overflow-y: hidden;
+}
+
+#answers {
+  color: lightgrey;
+}
+
+/* Start Animation */
+.animation-start {
+  position: relative;
+  color: white;
+  margin-bottom: 2rem;
+  font-size: 3rem;
+  -webkit-animation: drop 3s ease-in-out paused;
+          animation: drop 3s ease-in-out paused;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+  text-shadow: 1px 1px white;
+}
+
+@-webkit-keyframes drop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+  }
+  25% {
+    opacity: 0.5;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    -webkit-transform: skewY(7deg);
+            transform: skewY(7deg);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: skewY(-2deg);
+            transform: skewY(-2deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes drop {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-200px);
+            transform: translateX(-200px);
+  }
+  25% {
+    opacity: 0.5;
+    -webkit-transform: translateX(20px);
+            transform: translateX(20px);
+    -webkit-transform: skewY(7deg);
+            transform: skewY(7deg);
+  }
+  50% {
+    opacity: 0.8;
+    -webkit-transform: skewY(-2deg);
+            transform: skewY(-2deg);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.colored-span {
+  color: red !important;
+}
+
+/* Media Queries */
+@media screen and (max-width: 769px) {
+  .hero-container {
+    width: 80%;
+    height: 50%;
+  }
+  .animation-start {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 412px) {
+  .questions-li {
+    font-size: 1rem;
+    -webkit-transition-property: none;
+    transition-property: none;
+  }
+  .corrections {
+    font-size: 1.25rem;
+  }
+  .animation-start {
+    font-size: 1.25rem;
+  }
+  .error {
+    font-size: 1.25rem;
+  }
+  .question-container {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .questions-li {
+    padding-left: 2.5rem;
+  }
+  .question-container {
+    font-size: 0.75rem;
+  }
+}
+/*# sourceMappingURL=index.css.map */
