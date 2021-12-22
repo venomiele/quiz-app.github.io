@@ -56,6 +56,12 @@ ul {
       grid-template-rows: 20% 60% 20%;
 }
 
+.score-span {
+  color: red;
+  font-weight: 900 !important;
+  text-decoration: underline;
+}
+
 .ul-container {
   padding-top: 2rem;
 }
@@ -289,6 +295,7 @@ hr {
   }
   .corrections {
     font-size: 1.25rem;
+    padding: 0.25rem;
   }
   .animation-start {
     font-size: 1.25rem;
