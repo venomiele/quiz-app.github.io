@@ -62,18 +62,11 @@ populate(quizData);
 // Start animation
 window.addEventListener("DOMContentLoaded", () => {
 setTimeout(animatedStart,1000);
-setTimeout(animatedEnd,4000);
 })
 
 function animatedStart() {
     animateStart.style.animationPlayState = "running";
 }
-function animatedEnd() {
-    animateStart.style.display = "none";
-}
-
-
-
 
 function deselectAnswers() {
     chosen.forEach(function(inputs){
@@ -137,6 +130,7 @@ function scoreNumber () {
 
     function errorFunct() {
         errorMsg.style.display = "block";
+        errorMsg.style.color = "red";
         errorMsg.innerHTML = `The correct answer was ${quizData[currentQuestion - 1].correct} !`;   
     }
     
@@ -144,17 +138,25 @@ function scoreNumber () {
         errorMsg.style.display = "none";
     }
 
+function lastQuestionAnswer() {
+    container.style.display = "none";
+    scoreBox.style.display = "block";
+    scoreText.innerHTML = `You have answered correctly to ${score} out of 5 questions!`
+}
+
+
 btn.addEventListener("click", () => {
        
         let clientDecision = scoreNumber();    
         if(clientDecision === quizData[currentQuestion].correct) {
             score++;
             errorMsg.style.display = "block";
+            errorMsg.style.color = "lightgreen";
             errorMsg.innerHTML = `Your answer was correct !`
-            setTimeout(clearError,1200);
+            setTimeout(clearError,1800);         
         } else {
             setTimeout(errorFunct,0);
-            setTimeout(clearError,1200);
+            setTimeout(clearError,1800);
         }
     
          currentQuestion++;
@@ -163,11 +165,7 @@ btn.addEventListener("click", () => {
 
         if(currentQuestion < quizData.length) {
             loadQuiz();
-        } else {
-            container.style.display = "none";
-            scoreBox.style.display = "block";
-            scoreText.innerHTML = `You have answered correctly to ${score} out of 5 questions!`
-                     }
-         
-        
+        } else if(currentQuestion === quizData.length) {
+            setTimeout(lastQuestionAnswer,3000);
+    }        
 });
