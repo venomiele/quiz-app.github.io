@@ -1,32 +1,32 @@
 const quizData = [
     { question: "How old is Andrei ?",
-    a: "Andrei is 18 years old.",
-    b: "Andrei is 20 years old.",
-    c: "Andrei is 22 years old.",
+    a: "A: Andrei is 18 years old.",
+    b: "B: Andrei is 20 years old.",
+    c: "C: Andrei is 22 years old.",
     correct: "c"
     },
     { question: "What is the programming language Andrei likes the most ?",
-    a: "Javascript",
-    b: "Ruby",
-    c: "C++",
+    a: "A: Javascript",
+    b: "B: Ruby",
+    c: "C: C++",
     correct: "a"
     },
     { question: "Will Andrei get a job as a developer in the next year ?",
-    a: "Yes",
-    b: "Of course",
-    c: "Sure",
+    a: "A: Yes",
+    b: "B: Of course",
+    c: "C: Sure",
     correct: "a"
     },
     { question: "Will You have a great day today ?",
-    a: "Absolutely",
-    b: "Indeed",
-    c: "Yep",
+    a: "A: Absolutely",
+    b: "B: Indeed",
+    c: "C: Yep",
     correct: "c"
      },
     { question: "What is Andrei's favorite animal ?",
-a: "Dog",
-b: "Cat",
-c: "Wolf",
+a: "A: Dog",
+b: "B: Cat",
+c: "C: Wolf",
 correct: "b"
     }
 ];
@@ -44,6 +44,10 @@ let scoreText = document.querySelector(".score");
 let section = document.querySelector(".rows");
 let colored = document.getElementById("answers")
 let errorMsg = document.querySelector(".error");
+let correctionsBtn = document.querySelector(".corrections");
+let dropDown = document.querySelector(".dropdown-row");
+let animateStart = document.querySelector(".animation-start");
+
 
 let score = 0;
 let currentQuestion = 0;
@@ -54,6 +58,21 @@ let radioValue = undefined;
 loadQuiz();
 blockBtn();
 populate(quizData);
+
+// Start animation
+window.addEventListener("DOMContentLoaded", () => {
+setTimeout(animatedStart,1000);
+setTimeout(animatedEnd,4000);
+})
+
+function animatedStart() {
+    animateStart.style.animationPlayState = "running";
+}
+function animatedEnd() {
+    animateStart.style.display = "none";
+}
+
+
 
 
 function deselectAnswers() {
@@ -103,15 +122,17 @@ function scoreNumber () {
 
     function populate(Items) {
         let populateItems = Items.map(function(item) {
-            return `<div class="rows">
+            return `<div id="dropdown">
+            <div class="dropdown-row">
             <div class="dropdown-answers">
                 <h2 class="question-answers">${item.question}</h2>
     </div>
           <p id="answers">The correct answer was ${item.correct}.</p>
+        </div>
         </div>`
         })
         populateItems = populateItems.join("");
-        section.innerHTML = populateItems;
+        dropDown.innerHTML = populateItems;
     }
 
     function errorFunct() {
