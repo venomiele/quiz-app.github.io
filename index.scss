@@ -47,16 +47,7 @@ ul {
     box-shadow: inset 5px 5px 20px white, 5px 5px 10px black;
     display: grid;
     grid-template-rows: 20% 60% 20%;
-    animation: moving 1.3s ease-in;
 }
-
-/* Questions animation */
-@keyframes moving {
-    from{transform:translateY(500px);}
-    to{transform:translateY(0px);}
-}
-
-
 
 .ul-container {
     padding-top: 2rem;
