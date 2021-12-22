@@ -14,6 +14,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    overflow-y: hidden;
 }
 
 ul {
@@ -263,9 +264,6 @@ transform:translateX(-200px);}
         text-align: center;
     }
 
-}
-
-@media screen and (min-width:320px) {
     .questions-li {
         padding-left: 2.5rem;
         
