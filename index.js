@@ -141,7 +141,7 @@ function scoreNumber () {
 function lastQuestionAnswer() {
     container.style.display = "none";
     scoreBox.style.display = "block";
-    scoreText.innerHTML = `You have answered correctly to ${score} out of 5 questions!`
+    scoreText.innerHTML = `You have answered correctly to <span class="colored-span">${score}</span> out of <span class="colored-span">5</span> questions!`
 }
 
 
