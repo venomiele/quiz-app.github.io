@@ -5,10 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="index.css" rel="stylesheet">
-    <title>Document</title>
+    <title>Quiz !</title>
 </head>
 <body>
-    <!-- Video Container-->
+    <!-- Video Background Container-->
     <div class="video-container">
         <video class="video" muted loop infinite autoplay>
             <source src="https://cdn.videvo.net/videvo_files/video/free/2014-12/large_watermarked/in_front_of_preview.mp4" type="video/mp4">
@@ -16,21 +16,29 @@
           </video>
     </div>
     </div>
-<!-- End of quiz score box + Correct answers -->
+
+<!-- Start animation -->
+
+<div class="animation-start">
+<h1 class="animation-text">Welcome to my <span class="colored-span">quiz</span> !</h1>
+</div>
+
+<!--Quiz score box at the end + Correct answers -->
+
 <div class="score-box">
     <h3 class="score"></h3>
     <button class="reload" onclick="location.reload()">Take quiz again !</button>
-    <button class="corrections">See correct answers !</button>
+    <button class="corrections">See correct answers below !</button>
                         <!-- Answers population will go here -->
-    <div class="dropdown">
-        <div class="rows">
+                        <div id="dropdown">
+                            <div class="dropdown-row">
         <div class="dropdown-answers">
             <h2 class="question-answers"></h2>
 </div>
 <p id="answers"></p>
-        </div>
     </div>
-    </div>
+</div>
+</div>
     <!-- Questions container-->
 
     <article class="hero-container">
