@@ -24,6 +24,7 @@ body {
       -ms-flex-direction: column;
           flex-direction: column;
   overflow-y: hidden;
+  position: relative;
 }
 
 ul {
@@ -31,21 +32,13 @@ ul {
 }
 
 /* Video */
-.video-container {
-  width: 100%;
+.video {
   height: 100%;
+  width: 100%;
   position: absolute;
   z-index: -1;
-}
-
-.video {
-  position: absolute;
-  height: 100%;
-  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  top: 0;
-  left: 0;
 }
 
 .hero-container {
@@ -246,7 +239,7 @@ hr {
             transform: skewY(-2deg);
   }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
@@ -269,7 +262,7 @@ hr {
             transform: skewY(-2deg);
   }
   100% {
-    opacity: 0;
+    opacity: 1;
   }
 }
 
