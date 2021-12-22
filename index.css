@@ -61,30 +61,6 @@ ul {
   display: grid;
   -ms-grid-rows: 20% 60% 20%;
       grid-template-rows: 20% 60% 20%;
-  -webkit-animation: moving 1.3s ease-in;
-          animation: moving 1.3s ease-in;
-}
-
-/* Questions animation */
-@-webkit-keyframes moving {
-  from {
-    -webkit-transform: translateY(500px);
-            transform: translateY(500px);
-  }
-  to {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
-}
-@keyframes moving {
-  from {
-    -webkit-transform: translateY(500px);
-            transform: translateY(500px);
-  }
-  to {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
-  }
 }
 
 .ul-container {
